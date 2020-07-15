@@ -1,6 +1,6 @@
 # Importing components
-from nst import app
+from nst import app, socketio
 
 # running the server
 if __name__ == '__main__':
-    app.run(debug=True)
+    socketio.run(app=app, debug=True)
