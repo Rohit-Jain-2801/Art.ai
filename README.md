@@ -11,7 +11,7 @@ This project is a Deep Learning based Web application, that helps demonstrate an
 ## Getting Started
 1. Clone [this](https://github.com/Rohit-Jain-2801/Art.ai) repo.
 2. Make sure all necessary [dependencies](https://github.com/Rohit-Jain-2801/Art.ai/blob/master/requirements.txt) are installed.
-3. Dive into the project folder & run `python run.py` in your terminal. The flask server will start at port `5000`, by defualt.
+3. Dive into the project folder & run `python run.py` in your terminal. The flask server will start at port `5000`, by default.
 4. Upload content & style images.
 5. Configure the settings - choose between `TensorFlow-Hub` (default) or `TensorFlow Manual Training`.
 6. Sit tight & monitor the progress.
