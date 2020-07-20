@@ -1,0 +1,29 @@
+body {
+    background-image: url('https://www.itl.cat/pngfile/big/157-1572191_hd-wallpapers-for-website-background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.card, .card-action, .card-image{
+    border-radius: 25px !important;
+}
+img{
+    display: 'none';
+    width: auto !important;
+    max-width: 100%;
+    max-height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.mr {
+    margin-right: 5px;
+}
+.disabled_div {
+    pointer-events: none;
+    opacity: 0.4;
+}
+@media only screen and (max-width: 309px) {
+    .pad {
+        width: 100% !important;
+        margin-left: 0px !important;
+    }
+}
