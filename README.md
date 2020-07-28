@@ -31,8 +31,14 @@ This project is a Deep Learning based Web application, that helps demonstrate an
 * Provide option for selecting curated style images.
 * Improve speed of the manual training.
 * Provide option for sharing images.
+* Applying NST on videos.
 
 <br/>
 
 ## References
 * [TensorFlow - Neural Style Transfer](https://www.tensorflow.org/tutorials/generative/style_transfer?hl=en)
+* [PyImageSearch - Neural Style Transfer with OpenCV](https://www.pyimagesearch.com/2018/08/27/neural-style-transfer-with-opencv/)
+* Medium Posts-
+  + [Chi-Feng Wang - A Basic Introduction to Separable Convolutions](https://towardsdatascience.com/a-basic-introduction-to-separable-convolutions-b99ec3102728#:~:text=Unlike%20spatial%20separable%20convolutions%2C%20depthwise,factored%E2%80%9D%20into%20two%20smaller%20kernels.&text=The%20depthwise%20separable%20convolution%20is,number%20of%20channels%20%E2%80%94%20as%20well.)
+  + [Sahil Singla - Experiments on different loss configurations for style transfer](https://towardsdatascience.com/experiments-on-different-loss-configurations-for-style-transfer-7e3147eda55e)
+  + [Sahil Singla - Practical techniques for getting style transfer to work](https://towardsdatascience.com/practical-techniques-for-getting-style-transfer-to-work-19884a0d69eb)
