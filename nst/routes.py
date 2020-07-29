@@ -8,14 +8,19 @@ from flask import render_template, url_for
 def home():
     return render_template(template_name_or_list='index.html')
 
+connection = None
 
 @socketio.on('connect')
 def connected():
+    global connection
+    connection = True
     print('Connected!')
 
 
 @socketio.on('disconnect')
 def disconnect():
+    global connection
+    connection = False
     print('Disconnected!')
 
 
@@ -49,8 +54,11 @@ def handle_data(data):
                     'epoch': epoch,
                 }
             
-            socketio.send(data=out, json=False, namespace=None, room=None, callback=acknowledge, include_self=True)
-            socketio.sleep(1)
+            if connection:
+                socketio.send(data=out, json=False, namespace=None, room=None, callback=acknowledge, include_self=True)
+                socketio.sleep(1)
+            else:
+                break
 
     else:
         output_img = hub_model.run_style_transfer(content_img=content_img, style_img=style_img)
