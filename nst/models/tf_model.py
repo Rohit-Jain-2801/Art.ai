@@ -1,7 +1,7 @@
 # Importing libraries
+import time
 import numpy as np
 import tensorflow as tf
-
 
 # Content layer we are interested in
 CONTENT_LAYERS = ['block5_conv2'] 
@@ -17,6 +17,15 @@ STYLE_LAYERS = [
 
 NUM_CONTENT_LAYERS = len(CONTENT_LAYERS)
 NUM_STYLE_LAYERS = len(STYLE_LAYERS)
+
+
+def load_img(img_path):
+    '''
+    Load image array from the path
+    '''
+    img = tf.keras.preprocessing.image.load_img(path=img_path, grayscale=False, color_mode='rgb', target_size=None, interpolation='nearest')
+    arr = tf.keras.preprocessing.image.img_to_array(img=img, data_format=None, dtype=None)
+    return arr
 
 
 def preprocess_img(img):
@@ -216,6 +225,8 @@ def run_style_transfer(content_img, style_img, num_iterations=1000, content_weig
     
     
     for i in range(num_iterations):
+        s = time.time()
+
         # setting update flag to False
         update = False
 
@@ -243,8 +254,9 @@ def run_style_transfer(content_img, style_img, num_iterations=1000, content_weig
             best_loss = loss
             best_img = deprocess_img(img=init_image.numpy())
 
-        print('Epoch', (i+1), '\tLoss:', loss)
+        e = time.time()
+        print('Epoch: {} \tLoss: {} \t\tTime: {:.4f}'.format((i+1), loss.numpy(), (e-s)))
         yield (i+1), update, best_img
     
-    update = False
-    return (i+1), update, best_img
+    # update = False
+    # return (i+1), update, best_img

@@ -30,3 +30,9 @@ def save(img):
     Saves image on the server
     '''
     plt.imsave(fname='img.jpeg', arr=img)
+
+def load_img(path):
+    '''
+    Loads numpy image from image-path
+    '''
+    return np.asarray(a=Image.open(path), dtype=None, order=None)
