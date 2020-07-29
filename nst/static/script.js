@@ -13,7 +13,8 @@ $(document).ready(function(){
     });
 
     // socket = io();
-    socket = io.connect('http://localhost:5000/')
+    // socket = io.connect('http://localhost:5000/')
+    socket = io.connect('http://' + document.domain + ':' + location.port);
     // socket = io.connect('http://127.0.0.1:5000/', {transport: ['websocket'], upgrade: false});
 
     socket.on('connect', function(){
@@ -167,6 +168,7 @@ var transfer = function(){
                         'swt': $('#swt').val()
                     };
                 } else {
+                    $('.percentage').addClass('hide');
                     $('.loader').removeClass('hide');
                     $('.hub').removeClass('hide');
                 }

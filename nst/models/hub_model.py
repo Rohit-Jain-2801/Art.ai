@@ -16,7 +16,7 @@ def stylize(content_img_tensor, style_img_tensor):
     Loads hub-model & applies on the images
     '''
     # Load image stylization module
-    hub_module = tf_hub.load('https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2')
+    hub_module = tf_hub.load(handle='https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2')
 
     # Stylize image
     outputs = hub_module(tf.constant(value=content_img_tensor, dtype=tf.float32), tf.constant(value=style_img_tensor, dtype=tf.float32))[0]
