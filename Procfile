@@ -1,1 +1,1 @@
-web: gunicorn run:app
+web: gunicorn -k eventlet -w 1 -t 5000 run:app

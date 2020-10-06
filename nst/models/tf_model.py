@@ -63,7 +63,10 @@ def get_model():
     Loads vgg19 model and returns a keras-model with combined style & content outputs resp.
     '''
     # Load our model. We load pretrained VGG, trained on imagenet data
-    vgg = tf.keras.applications.vgg19.VGG19(include_top=False, weights='imagenet', pooling=None)
+    # vgg = tf.keras.applications.vgg19.VGG19(include_top=False, weights='imagenet', pooling=None, classes=1000, classifier_activation='softmax')
+    vgg = tf.keras.applications.vgg19.VGG19(include_top=False, weights=None, pooling=None, classes=1000, classifier_activation='softmax')
+    # vgg.load_weights('vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5')
+    vgg.load_weights('./nst/models/vgg19_weights_tf_dim_ordering_tf_kernels_notop.h5')
     vgg.trainable = False
 
     # Get output layers corresponding to style and content layers 
