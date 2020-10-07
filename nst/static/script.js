@@ -2,14 +2,14 @@ var e; // epochs
 
 // After page is loaded
 $(document).ready(function(){
-        // $('.sidenav').sidenav();
-        $('.tooltipped').tooltip();
-        $('.modal').modal();
-        $('.materialboxed').materialbox();
-        $('.collapsible').collapsible();
+    // $('.sidenav').sidenav();
+    $('.tooltipped').tooltip();
+    $('.modal').modal();
+    $('.materialboxed').materialbox();
+    $('.collapsible').collapsible();
 
-        $("input[name='group']").change(function() {
-            $(".manual").toggleClass('disabled_div');
+    $("input[name='group']").change(function() {
+        $(".manual").toggleClass('disabled_div');
     });
 
     // socket = io();
@@ -69,6 +69,12 @@ $(document).ready(function(){
 //         'height': tmp_img.height
 //     }
 // };
+
+$("input[name='group']").change(function(){
+    alert('As of now, Manual training is 𝑵𝑶𝑻 supported on the server.\nHowever, it can be done locally! Refer to the GitHub Master branch...');
+    $('input[type="radio"]').not(':checked').prop("checked", true);
+    $(".manual").toggleClass('disabled_div');
+});
 
 // download button
 var download = function(imgdata){
