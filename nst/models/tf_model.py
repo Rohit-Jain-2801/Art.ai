@@ -3,6 +3,17 @@ import time
 import numpy as np
 import tensorflow as tf
 
+# Works for GPU-only
+# --------------------------------------------------------------------------------------------------------------------
+# tf.config.threading.set_inter_op_parallelism_threads(1)
+# tf.config.threading.set_intra_op_parallelism_threads(1)
+# print(tf.config.threading.get_inter_op_parallelism_threads())     # 0 means the system picks an appropriate number.
+# print(tf.config.threading.get_intra_op_parallelism_threads())     # 0 means the system picks an appropriate number.
+
+# tf.config.experimental.set_memory_growth(tf.config.list_physical_devices('GPU')[0], True)
+# print(tf.config.experimental.get_memory_growth(tf.config.list_physical_devices('GPU')[0]))
+# --------------------------------------------------------------------------------------------------------------------
+
 # Content layer we are interested in
 CONTENT_LAYERS = ['block5_conv2'] 
 
@@ -191,6 +202,7 @@ def compute_grads(cfg):
     return tape.gradient(total_loss, cfg['init_image']), all_loss
 
 
+# @tf.function()
 def run_style_transfer(content_img, style_img, num_iterations=1000, content_weight=1e3, style_weight=1e-2, learning_rate=5):
     '''
     Performs Neural Style Transfer (NST)
