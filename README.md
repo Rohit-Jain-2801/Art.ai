@@ -18,6 +18,21 @@ This project is a Deep Learning based Web application, that helps demonstrate an
 
 <br/>
 
+## Screenshots
+![StartUp](https://raw.githubusercontent.com/Rohit-Jain-2801/Art.ai/master/.github/images/Image1.png)
+
+![Hub-Setting](https://raw.githubusercontent.com/Rohit-Jain-2801/Art.ai/master/.github/images/Image2.png)
+
+![Hub-Train](https://raw.githubusercontent.com/Rohit-Jain-2801/Art.ai/master/.github/images/Image3.png)
+
+![Hub-Result](https://raw.githubusercontent.com/Rohit-Jain-2801/Art.ai/master/.github/images/Image4.png)
+
+![Manual-Setting](https://raw.githubusercontent.com/Rohit-Jain-2801/Art.ai/master/.github/images/Image5.png)
+
+![Manual-Train](https://raw.githubusercontent.com/Rohit-Jain-2801/Art.ai/master/.github/images/Image6.png)
+
+<br/>
+
 ## Major Tech Stack
 * [Python](https://www.python.org/)
 * [TensorFlow](https://www.tensorflow.org/)
